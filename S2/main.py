@@ -1,4 +1,5 @@
 from lexer import Lexer
+from parser import Parser
 
 def get_data(filename = "samples/si1.txt"):
     code = open(filename, "r").read()
@@ -9,10 +10,6 @@ l = Lexer()
 
 l.lex(get_data())
 
-l.clean()
+p = Parser(l)
 
-t = l.next_token()
-
-while t != None:
-    print(t)
-    t = l.next_token()
+p.parse()

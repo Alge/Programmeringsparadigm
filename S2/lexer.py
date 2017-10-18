@@ -60,8 +60,3 @@ class Lexer:
         t =  self.token_list[self.token_index]
         self.token_index += 1
         return t
-
-    def clean(self):
-        for i in self.token_list:
-            if i.type=="MELLANSLAG" or i.type=="TAB" or i.type=="NEWLINE":
-                self.token_list.remove(i)
